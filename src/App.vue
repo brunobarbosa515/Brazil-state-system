@@ -1,10 +1,23 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <headerTdc />
+  <!-- <header>
+    <div>
+      <router-link to="/"><button>Dados</button></router-link>
+      <router-link to="/hobbie"><button>Hobbies</button></router-link>
+    </div>
+  </header> -->
+
   <router-view />
 </template>
+
+<script>
+import headerTdc from "@/components/headerTdc.vue";
+export default {
+  components: {
+    headerTdc,
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -15,16 +28,47 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+header {
+  width: 100%;
+  height: 100px;
+  background-color: #2c3e50;
+  div {
+    button {
+      margin: 30px 10px 0 0;
+      background-color: white;
+      color: black;
+      width: 80px;
+      height: 40px;
+      border-radius: 5px;
     }
+  }
+}
+.card {
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 150px;
+  background-color: aliceblue;
+  .flag-img {
+    width: 200px;
+    height: 150px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  span {
+    font-size: 1.2rem;
+    color: rgb(89, 89, 89);
+    padding-bottom: 15px;
   }
 }
 </style>
